@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- LinearLayout for main content -->
+    <LinearLayout
+        android:id="@+id/linearLayoutContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo at the top -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:contentDescription="App Logo"
+            android:src="@drawable/logo_forkfolio" />
+
+        <!-- Heading text -->
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello, Ka-Foodie!"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold" />
+
+        <!-- SearchView for searching recipes -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search recipes"
+            android:background="@drawable/circular_edittext_bg"
+            android:iconifiedByDefault="false"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Categories Heading -->
+        <TextView
+            android:id="@+id/categoriesHeadingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Categories RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoriesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Placeholder TextView for Empty RecyclerView -->
+        <TextView
+            android:id="@+id/emptyPlaceholderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No recipes to show"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@android:color/darker_gray"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Recipes Heading -->
+        <TextView
+            android:id="@+id/recipesHeadingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recipes"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- RecyclerView to display recipes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

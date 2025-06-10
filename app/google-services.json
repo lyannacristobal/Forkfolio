@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "264642518214",
+    "firebase_url": "https://crud-copy-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "crud-copy",
+    "storage_bucket": "crud-copy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264642518214:android:ff33093a8d993ac6be4bc7",
+        "android_client_info": {
+          "package_name": "com.example.forkfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOugfa5A-0JlQNs4d_X60OMTrPIDNHGu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9">
+
+    <!-- Logo at the Top -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/logo_forkfolio"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Centered Profile Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="My Profile"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#333333"
+                        android:gravity="center"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Full Name -->
+                    <TextView
+                        android:id="@+id/fullNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Full Name"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="#333333"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Email -->
+                    <TextView
+                        android:id="@+id/emailTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email Address"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_light"
+                        android:textColor="#666666"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#DDDDDD"
+                        android:layout_marginVertical="16dp" />
+
+                    <!-- Editable Fields -->
+                    <EditText
+                        android:id="@+id/firstNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="First Name"
+                        android:background="@drawable/circular_edittext_bg"
+                        android:fontFamily="@font/poppins_light"
+                        android:padding="12dp"
+                        android:textColor="#000000"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/surnameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Last Name"
+                        android:background="@drawable/circular_edittext_bg"
+                        android:fontFamily="@font/poppins_light"
+                        android:padding="12dp"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email Address"
+                        android:background="@drawable/circular_edittext_bg"
+                        android:fontFamily="@font/poppins_light"
+                        android:padding="12dp"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Action Buttons -->
+                    <Button
+                        android:id="@+id/saveButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save Changes"
+                        android:elevation="4dp"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="@font/poppins_medium"
+                        android:backgroundTint="#FFC107"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"
+                        android:layout_marginTop="16dp"
+                        android:paddingVertical="12dp" />
+
+                    <Button
+                        android:id="@+id/changePasswordButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Change Password"
+                        android:elevation="4dp"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="@font/poppins_medium"
+                        android:backgroundTint="#FFC107"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:paddingVertical="12dp" />
+
+                    <Button
+                        android:id="@+id/editProfileButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Edit Profile"
+                        android:elevation="4dp"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="@font/poppins_medium"
+                        android:backgroundTint="#FFC107"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="16dp"
+                        android:paddingVertical="12dp" />
+
+                    <Button
+                        android:id="@+id/deactivateAccountButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deactivate Account"
+                        android:elevation="4dp"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="@font/poppins_medium"
+                        android:backgroundTint="#F44336"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="2dp"
+                        android:paddingVertical="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
